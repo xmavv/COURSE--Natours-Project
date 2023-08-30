@@ -8,21 +8,33 @@
     --dark__green__opacity: #28b485b8;
 }
 
-* {
+*,
+*::after,
+*::before {
+    /* robimy tez pseudoelementy zeby nic dziwnego sie nie zadzialo */
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
+    box-sizing: inherit;
+    /* i tu mowimy ze kazdy element ma dziedziczyc property box-sizing, ktore w body ustawione jest tak jak ma byc */
+}
+
+html {
+    font-size: 62.5%;
+    /* w ten sposob wszystko gitarka */
+    /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */
 }
 
 body {
-    padding: 2rem;
+    padding: 3rem;
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     /* czyli bedzie 1.7 raza wieksza niz ta ustalona */
     color: #777;
+    
+    box-sizing: border-box;
+    /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
 }
 
 .header {
@@ -44,18 +56,18 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 }
 
-.logo__box {
+.header__logo-box {
     position: absolute;
-    top: 3rem;
-    left: 3rem;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo {
-    height: 3rem;
+.header__logo {
+    height: 3.5rem;
     /* width zostanie ustawiona automatycznie */
 }
 
-.text__box{
+.header__text-box{
     /* dodajemy nasze position relative */
     position: absolute;
     top: 40%;
@@ -65,21 +77,21 @@ body {
     text-align: center;
 }
 
-.heading__primary {
+.heading-primary {
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     /* backface-visibility: hidden; */
     /* to pozwala nam uniknac tego shaky na koncu animacji ale w sumie u mnie tego nie ma wiec ja tego nie uzywam */
     /* dodajemy to do elementu rodzica */
 }
 
-/* dsiaply block, zeby byly pod soba, bo span orginalnie jest inline */
-.heading__primary__main {
+/* display block, zeby byly pod soba, bo span orginalnie jest inline */
+.heading-primary--main {
     display: block;
-    font-size: 4.5rem;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 3rem;
+    letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-in-out;
 
     /* animation-delay: 3s; */
@@ -87,20 +99,20 @@ body {
     /* animation-iteration-count: 3; */
 }
 
-.heading__primary__sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 1.15rem;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-in-out;
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-7rem);
+        transform: translateX(-10rem);
     } 80% {
-        transform: translateX(0.7rem);
+        transform: translateX(1rem);
     } 100% {
         opacity: 1;
         transform: translateX(0);
@@ -111,22 +123,22 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(3rem);
+        transform: translateX(6rem);
     } 80% {
-        transform: translateX(-0.3rem);
+        transform: translateX(-0.7rem);
     } 100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-/* amimacja zawsze, jak cos sie laduje na poczatku strony */
+/* amimacje uzywamy zawsze, jak cos sie laduje na poczatku strony */
 @keyframes moveInTop {
     0% {
         opacity: 0;
-        transform: translateY(2rem);
+        transform: translateY(3rem);
     } 80% {
-        transform: translateY(-.2rem);
+        transform: translateY(-.5rem);
     } 100% {
         opacity: 1;
         transform: translateY(0);
@@ -142,31 +154,32 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1rem 2.7rem;
+    padding: 1.5rem 4rem;
     /* jezeli chcemy dodac jakies paddingi, height, width to powinnismy zrobic display: inline-block */
     /* nasz tag a jest elementem inline, wiec jak dodamy padding rozszerzy sie nasze biale tlo
     i moze wejsc na napisy, a tego nie chcemy, wiec gdy damy mu inline block, odsunie sie bo jest elementem blokowym
     natomiast ale jego ramka zostanie tak szeroka jakby byl elementem inline
     w display: block, element zajal by cala szerokosc jego rodzica */
     display: inline-block;
-    border-radius: 20rem;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
     transform: translateY(-.15rem);
     /* tutaj dajemy duzy blur 1.5rem, mowi o tym ze jestesmy dalej na stronie
     w active damy mniejszy, co pokaze ze jestesmy troche blizej na stronie */
-    box-shadow: 0 .7rem 1.5rem rgba(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
 /* active, jak klikniemy */
 .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 .4rem .5rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .7rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn__white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -181,7 +194,7 @@ body {
     /* taki sam jak nasz przycisk, a after traktowany jest jako dziecko naszego elementu */
     height: 100%;
     width: 100%;
-    border-radius: 20rem;
+    border-radius: 10rem;
     /* ustawiamy za przyciskiem*/
     /* dodajemy nasze position relative */
     position: absolute;
@@ -191,7 +204,7 @@ body {
     transition: all .4s;
 }
 
-.btn__white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -201,7 +214,7 @@ body {
     opacity: 0;
 }
 
-.btn__animated {
+.btn--animated {
     animation: moveInTop .5s ease-in-out .75s;
     animation-fill-mode: backwards;
     /* automatycznie da style z 0% naszej animacji */

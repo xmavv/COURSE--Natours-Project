@@ -11,20 +11,30 @@
     </head>
     <body>
         <header class="header">
+            <!-- header to nasz block w BEM, jest czyms konkretnym oddzielonym od strony (container) -->
             <!-- dajemy se diva, bo img to inline-block, ale mozemy tez w sumie zrobic display: block -->
-            <div class="logo__box">
-                <img src="img/logo-white.png" alt="Logo" class="logo">
+            <div class="header__logo-box">
+                <img src="img/logo-white.png" alt="Logo" class="header__logo">
+                <!-- logo-box i logo, sa ELEMENTAMI w naszym BLOKU, te elementy ze specyficznymi wartosciami
+                nie istnieja bez niego, istnieja tylko w tym naglowku wiec nie maja independentnosci -->
             </div>
 
             <!-- powinnismy umiescic tutaj tytul naszej strony, bo dzieki temu google sobie szuka po h1
             i wtedy wie o co chodzi na naszej stronie  -->
-            <div class="text__box">
-                <h1 class="heading__primary">
+            <div class="header__text-box">
+                <!-- jest w headerze jako jego element i nie ma sensu uzyc go gdzie indziej z tymi wymiarami,
+                istnieje tylko w naszym naglowku -->
+                <!-- heading primary jest osobnym blokiem, mozemy chciec gdzies indziej na jakiejs stronie
+                uzyc sobie takiego headingu -->
+                <h1 class="heading-primary">
                     <!-- span element jest perfekcyjny bo uzwamy go po to zeby ostylowac inaszej jakis tekst -->
-                    <span class="heading__primary__main">Outdoors</span>
-                    <span class="heading__primary__sub">is where life happens</span>
+                    <span class="heading-primary--main">Outdoors</span>
+                    <!-- to sa modyfikatory naszego podstawowego heading-primary
+                    bo robia po prostu troszke inna wersje tego heading-primary -->
+                    <span class="heading-primary--sub">is where life happens</span>
                 </h1>
-                <a href="#" class="btn btn__white btn__animated">Discover our tours</a>
+                <!-- tutaj bardziej tez OOCSS, bo mamy przycisk i rozne jego wersje (klasy) bialy i animowany -->
+                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
                 <!-- w klasie btn umieszczamy rzeczy ktore sie nie zmieniaja, a w klasie btn__white
                 tylko te dotyczace bialego przycisku, utility classes -->
             </div>
