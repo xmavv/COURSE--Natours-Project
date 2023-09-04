@@ -1,0 +1,75 @@
+.btn {
+    /* pseudoklasa linku kiedy np hoverujemy albo checkbox is clicked, albo lastchild */
+    /* uzwamy pseudoklas w specjalnych warunkach */
+    /* link jest specjalnym stanem selektora gdy jest elementem zakotwiczajacym, wiec dziala jako lacze*/
+    /* visited jak juz kliknal w przycik a potem go widzi ponownie */
+    /* my chcemy zeby te dwa stany, czyli normalny link i ten po kliknieciu wygladaly tak samo */
+    &:link, &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* jezeli chcemy dodac jakies paddingi, height, width to powinnismy zrobic display: inline-block */
+    /* nasz tag a jest elementem inline, wiec jak dodamy padding rozszerzy sie nasze biale tlo
+    i moze wejsc na napisy, a tego nie chcemy, wiec gdy damy mu inline block, odsunie sie bo jest elementem blokowym
+    natomiast ale jego ramka zostanie tak szeroka jakby byl elementem inline
+    w display: block, element zajal by cala szerokosc jego rodzica */
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    }
+
+    &:hover {
+        transform: translateY(-.15rem);
+        /* tutaj dajemy duzy blur 1.5rem, mowi o tym ze jestesmy dalej na stronie
+        w active damy mniejszy, co pokaze ze jestesmy troche blizej na stronie */
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after {
+            /* dajemy rozne skale w roznych kierunkach, bo w kierunku pionowym troszke byla za mala ta przerwa, wiec robimy ja troszke wieksza */
+            transform: scale(1.4, 1.6);
+            opacity: 0;
+        }
+    }
+    /* active, jak klikniemy */
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .7rem 1rem rgba($color-black, .2);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    /* dodaje sie wirtualny element na ktorym go dodajemy i mozemy go stylowac */
+    /* to jest po to zeby robic fajne efekty jak ten */
+    /* dodajemy element ktory wyglada tak samo, ale dodajemy go za naszym przyciskiem behind */
+    /* kiedy opuscimy hover on sobie tam wraca */
+    &::after {
+        /* musimy to dac */
+        content: "";
+        display: inline-block;
+        /* taki sam jak nasz przycisk, a after traktowany jest jako dziecko naszego elementu */
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        /* ustawiamy za przyciskiem*/
+        /* dodajemy nasze position relative */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    &--animated {
+        animation: moveInTop .5s ease-in-out .75s;
+        animation-fill-mode: backwards;
+        /* automatycznie da style z 0% naszej animacji */
+    }
+}

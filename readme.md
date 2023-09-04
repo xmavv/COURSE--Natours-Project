@@ -6,3 +6,4 @@
 - positioning
 - inheritance
 - principles of design
+- sass

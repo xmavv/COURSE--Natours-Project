@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    /* robimy tez pseudoelementy zeby nic dziwnego sie nie zadzialo */
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    /* i tu mowimy ze kazdy element ma dziedziczyc property box-sizing, ktore w body ustawione jest tak jak ma byc */
+}
+
+html {
+    // this defines what 1 rem is
+    font-size: 62.5%;
+    /* w ten sposob wszystko gitarka */
+    /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */
+}
+
+body {
+    box-sizing: border-box;
+    /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
+}

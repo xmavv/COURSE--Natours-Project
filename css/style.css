@@ -1,157 +1,93 @@
-:root {
-    --light__green: #7ed56f;
-    --light__green__opacity: #7ed56fc2;
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* tak jak na poczatku wygladala wiec 0 */ } }
 
-    --medium__green: #55c57a;
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(6rem); }
+  80% {
+    transform: translateX(-0.7rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-    --dark__green: #28b485;
-    --dark__green__opacity: #28b485b8;
-}
+/* amimacje uzywamy zawsze, jak cos sie laduje na poczatku strony */
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  80% {
+    transform: translateY(-0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 *,
 *::after,
 *::before {
-    /* robimy tez pseudoelementy zeby nic dziwnego sie nie zadzialo */
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
-    /* i tu mowimy ze kazdy element ma dziedziczyc property box-sizing, ktore w body ustawione jest tak jak ma byc */
-}
+  /* robimy tez pseudoelementy zeby nic dziwnego sie nie zadzialo */
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  /* i tu mowimy ze kazdy element ma dziedziczyc property box-sizing, ktore w body ustawione jest tak jak ma byc */ }
 
 html {
-    font-size: 62.5%;
-    /* w ten sposob wszystko gitarka */
-    /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */
-}
+  font-size: 62.5%;
+  /* w ten sposob wszystko gitarka */
+  /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */ }
 
 body {
-    padding: 3rem;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    /* czyli bedzie 1.7 raza wieksza niz ta ustalona */
-    color: #777;
-    
-    box-sizing: border-box;
-    /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
-}
-
-.header {
-    position: relative;
-    height: 95vh;
-    background-image: linear-gradient(
-        to right bottom, 
-        var(--light__green__opacity), 
-        var(--dark__green__opacity)),
-        url(../img/hero.jpg);
-    background-size: cover;
-    /* cover zawsze bedzie sie staral dopasowac maksymalnie do containera naszego */
-    background-position: top;
-    /* to robi ze niezaleznie od obszaru gora obrazu zawsze pozostaje na gorze naszego containera */
-    /* bottom bedzie croped, a top zostaje taki sam */
-    /* mozemy uzyc rowniez :bottom, :center */
-    /* clip-path: polygon(x y, x y, x y, x y); */
-    /* ruchem wskazowek zegara */
-    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-}
-
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.header__logo {
-    height: 3.5rem;
-    /* width zostanie ustawiona automatycznie */
-}
-
-.header__text-box{
-    /* dodajemy nasze position relative */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* top do rodzica, transform do siebie samego */
-    text-align: center;
-}
+  padding: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /* czyli bedzie 1.7 raza wieksza niz ta ustalona */
+  color: #777;
+  box-sizing: border-box;
+  /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */ }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
-    /* backface-visibility: hidden; */
-    /* to pozwala nam uniknac tego shaky na koncu animacji ale w sumie u mnie tego nie ma wiec ja tego nie uzywam */
-    /* dodajemy to do elementu rodzica */
-}
-
-/* display block, zeby byly pod soba, bo span orginalnie jest inline */
-.heading-primary--main {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    /* display block, zeby byly pod soba, bo span orginalnie jest inline */
     display: block;
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-in-out;
-
     /* animation-delay: 3s; */
     /* ile razy sie animacja powtorzy */
-    /* animation-iteration-count: 3; */
-}
-
-.heading-primary--sub {
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-in-out;
-}
+    animation: moveInRight 1s ease-in-out; }
 
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    } 80% {
-        transform: translateX(1rem);
-    } 100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* tak jak na poczatku wygladala wiec 0 */
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(6rem);
-    } 80% {
-        transform: translateX(-0.7rem);
-    } 100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* amimacje uzywamy zawsze, jak cos sie laduje na poczatku strony */
-@keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(3rem);
-    } 80% {
-        transform: translateY(-.5rem);
-    } 100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* pseudoklasa linku kiedy np hoverujemy albo checkbox is clicked, albo lastchild */
-/* uzwamy pseudoklas w specjalnych warunkach */
-/* link jest specjalnym stanem selektora gdy jest elementem zakotwiczajacym, wiec dziala jako lacze*/
-/* visited jak juz kliknal w przycik a potem go widzi ponownie */
-/* my chcemy zeby te dwa stany, czyli normalny link i ten po kliknieciu wygladaly tak samo */
-.btn:link,
-.btn:visited {
+.btn {
+  /* pseudoklasa linku kiedy np hoverujemy albo checkbox is clicked, albo lastchild */
+  /* uzwamy pseudoklas w specjalnych warunkach */
+  /* link jest specjalnym stanem selektora gdy jest elementem zakotwiczajacym, wiec dziala jako lacze*/
+  /* visited jak juz kliknal w przycik a potem go widzi ponownie */
+  /* my chcemy zeby te dwa stany, czyli normalny link i ten po kliknieciu wygladaly tak samo */
+  /* active, jak klikniemy */
+  /* dodaje sie wirtualny element na ktorym go dodajemy i mozemy go stylowac */
+  /* to jest po to zeby robic fajne efekty jak ten */
+  /* dodajemy element ktory wyglada tak samo, ale dodajemy go za naszym przyciskiem behind */
+  /* kiedy opuscimy hover on sobie tam wraca */ }
+  .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -164,30 +100,25 @@ body {
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem;
-}
-
-.btn:hover {
-    transform: translateY(-.15rem);
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.15rem);
     /* tutaj dajemy duzy blur 1.5rem, mowi o tym ze jestesmy dalej na stronie
-    w active damy mniejszy, co pokaze ze jestesmy troche blizej na stronie */
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-}
-/* active, jak klikniemy */
-.btn:active {
+        w active damy mniejszy, co pokaze ze jestesmy troche blizej na stronie */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      /* dajemy rozne skale w roznych kierunkach, bo w kierunku pionowym troszke byla za mala ta przerwa, wiec robimy ja troszke wieksza */
+      transform: scale(1.4, 1.6);
+      opacity: 0; }
+  .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 .7rem 1rem rgba(0, 0, 0, .2);
-}
-
-.btn--white {
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
     background-color: #fff;
-    color: #777;
-}
-/* dodaje sie wirtualny element na ktorym go dodajemy i mozemy go stylowac */
-/* to jest po to zeby robic fajne efekty jak ten */
-/* dodajemy element ktory wyglada tak samo, ale dodajemy go za naszym przyciskiem behind */
-/* kiedy opuscimy hover on sobie tam wraca */
-.btn::after {
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
     /* musimy to dac */
     content: "";
     display: inline-block;
@@ -201,21 +132,37 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all .4s;
-}
-
-.btn--white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    /* dajemy rozne skale w roznych kierunkach, bo w kierunku pionowym troszke byla za mala ta przerwa, wiec robimy ja troszke wieksza */
-    transform: scale(1.4, 1.6);
-    opacity: 0;
-}
-
-.btn--animated {
+    transition: all .4s; }
+  .btn--animated {
     animation: moveInTop .5s ease-in-out .75s;
     animation-fill-mode: backwards;
-    /* automatycznie da style z 0% naszej animacji */
-}
+    /* automatycznie da style z 0% naszej animacji */ }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* cover zawsze bedzie sie staral dopasowac maksymalnie do containera naszego */
+  background-position: top;
+  /* to robi ze niezaleznie od obszaru gora obrazu zawsze pozostaje na gorze naszego containera */
+  /* bottom bedzie croped, a top zostaje taki sam */
+  /* mozemy uzyc rowniez :bottom, :center */
+  /* clip-path: polygon(x y, x y, x y, x y); */
+  /* ruchem wskazowek zegara */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /* width zostanie ustawiona automatycznie */ }
+  .header__text-box {
+    /* dodajemy nasze position relative */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* top do rodzica, transform do siebie samego */
+    text-align: center; }

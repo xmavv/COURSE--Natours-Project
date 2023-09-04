@@ -1,0 +1,36 @@
+body {
+    padding: 3rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    /* czyli bedzie 1.7 raza wieksza niz ta ustalona */
+    color: $color-grey-dark;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    &--main {
+        /* display block, zeby byly pod soba, bo span orginalnie jest inline */
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft 1s ease-in-out;
+    
+        /* animation-delay: 3s; */
+        /* ile razy sie animacja powtorzy */
+        /* animation-iteration-count: 3; */
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-in-out;
+    }
+}
