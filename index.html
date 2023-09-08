@@ -42,7 +42,9 @@
 
         <main>
             <section class="section-about">
-                <div class="u-center-text u-margin-bottom-8"> 
+                <!-- zmieniamy ten margin-8 na margin-big, bo zapisujas 8, hardcodujemy, moglibysmy tak samo 
+                zapisac inline style, a w sposob big, mozemy zawsze sobie zmienic potem ta nasza 8 -->
+                <div class="u-center-text u-margin-bottom-big"> 
                     <!-- utility class ==> one simple goal to center text , will be reuseable-->
                     <h2 class="heading-secondary">
                         Exciting tours for adventorous people
@@ -51,10 +53,31 @@
 
                 <div class="row">
                     <div class="col-1-of-2">
-                        text content
+                        <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
+                        <!-- dobrze jest pracowac zawsze z ostatecznym tekstem ktory bedzie na stronie, zeby wiedziec jak go ostylowac -->
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Provident in odio aut cupiditate veniam aspernatur earum tempore 
+                            laborum, quo quod ex sapiente molestias sequi soluta dolorem, omnis ipsam non rerum!
+                        </p>
+
+<!-- fajnie jak nie ma tego samego tekstu wczesniej, xd szkoda ze nie wiedziales przed conceptboardem -->
+                        
+                        <h3 class="heading-tertiary u-margin-bottom-small">Live advrentures like you never have before</h3>
+                        <p class="paragraph">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Eaque porro aut voluptatum maxime in! Saepe cumque accusantium perspiciatis, 
+                            illum ea eum incidunt eligendi quaerat.
+                        </p>
+
+                        <button class="btn-text">Learn more &rarr;</button>
                     </div>
                     <div class="col-1-of-2">
-                        image composition
+                        <div class="composition">
+                            <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                            <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                            <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                        </div>
                     </div>
                 </div>
             </section>

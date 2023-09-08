@@ -6,6 +6,7 @@
     // width: 100%; bo tak ma div default
     margin: 0 auto;
     display: flex;
+    gap: $gutter-horizontal;
     // zamniemiamy to na zmienne, gdybysmy moze chcieli sobie to zmienic i nie szukac w pliku
 
     // zaznaczamy wszystko POZA ostatnim dzieckiem
@@ -18,9 +19,9 @@
     // $ ktora konczy sie na col-
     [class^="col-"] {
 
-        &:not(:last-child) {
-            margin-right: $gutter-horizontal;
-        }
+        // &:not(:last-child) {
+        //     margin-right: $gutter-horizontal;
+        // }
     }
 
     .col-1-of-2 {

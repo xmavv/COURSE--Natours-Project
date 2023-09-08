@@ -2,7 +2,7 @@
 
 - BEM 
 - more advanced animations/transitions
-- pseudoelement, pseudoclasses
+- pseudoelement, pseudoclasses, utility classes
 - positioning
 - inheritance
 - principles of design
