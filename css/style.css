@@ -45,15 +45,17 @@ html {
   /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */ }
 
 body {
+  box-sizing: border-box;
+  /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */ }
+
+body {
   padding: 3rem;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
   /* czyli bedzie 1.7 raza wieksza niz ta ustalona */
-  color: #777;
-  box-sizing: border-box;
-  /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */ }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -75,6 +77,27 @@ body {
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-in-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
 
 .btn {
   /* pseudoklasa linku kiedy np hoverujemy albo checkbox is clicked, albo lastchild */
@@ -138,6 +161,27 @@ body {
     animation-fill-mode: backwards;
     /* automatycznie da style z 0% naszej animacji */ }
 
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  display: flex; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc(((100% - 2 * 6rem) / 3) * 2 + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(((100% - 3 * 6rem) / 2) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(((100% - 3 * 6rem) / 4) * 3 + 2 * 6rem); }
+
 .header {
   position: relative;
   height: 95vh;
@@ -166,3 +210,8 @@ body {
     transform: translate(-50%, -50%);
     /* top do rodzica, transform do siebie samego */
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -15vh; }

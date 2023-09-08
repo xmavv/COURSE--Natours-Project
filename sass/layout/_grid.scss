@@ -1,0 +1,51 @@
+.row {
+    // jezeli mamy tyle miejsca ile chcemy to bedzie 114remow normalnie
+    // ale jesli nie ma wystarczajaco miejsca, czyli ze viewport jest mniejszy od tego co tu napisalismy
+    // to po prostu wypelni 100% miejsca ktore ma
+    max-width: $grid-width;
+    // width: 100%; bo tak ma div default
+    margin: 0 auto;
+    display: flex;
+    // zamniemiamy to na zmienne, gdybysmy moze chcieli sobie to zmienic i nie szukac w pliku
+
+    // zaznaczamy wszystko POZA ostatnim dzieckiem
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    // zaznaczamy wszystkie elementy ktore maja atrubyt class ktory zaczyna sie na col-
+    // * ktore zawiera slowo col-
+    // $ ktora konczy sie na col-
+    [class^="col-"] {
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        // mozna mieszac jednostki
+        //w sassie w calc musimy dodac ten hash i curly braces
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+
+    .col-1-of-4 {
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+
+    .col-2-of-3 {
+        width: calc(((100% - 2 * #{$gutter-horizontal}) / 3) * 2 + #{$gutter-horizontal});
+    }
+
+    .col-2-of-4 {
+        width: calc(((100% - 3 * #{$gutter-horizontal}) / 2) + #{$gutter-horizontal});
+    }
+
+    .col-3-of-4 {
+        width: calc(((100% - 3 * #{$gutter-horizontal}) / 4) * 3 + 2 * #{$gutter-horizontal});
+    }
+}
