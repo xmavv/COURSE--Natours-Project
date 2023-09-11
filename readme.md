@@ -9,3 +9,4 @@
 - sass
 - icon fonts
 - rowne karty przy innej dlugosci tekstu
+- perspective, rotation
