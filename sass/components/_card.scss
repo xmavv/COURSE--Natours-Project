@@ -1,8 +1,47 @@
 .card {
-    background-color: orangered;
     height: 50rem;
+    width: 30%;
+    perspective: 1500px;
+    -moz-perspective: 150rem; // mozilla fix
+    // perspective has to be on parent, czyli tutaj mamy transform na hover, wiec na rodzicu robimy
+    // perspektywe
+    position: relative;
 
-    &:hover {
+    &__side {
+        font-size: 5rem;
+        color: white;
+        height: 50rem;
+        transition: all .8s ease;
+        position: absolute;
+        // wyrzucamy je i sa absolutne wiec ich rodzic nie ma wysokosci wiec po prostu mu nadajemy
+        // pierwszy selektor z gory height: 50rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        // nie zobaczymy tylnej czesci
+        backface-visibility: hidden;
+        @include box-shadow;
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            // musimy odwrocic, bo z naszej perspektywy z przodu, nasza karta jest juz odwrocona
+            // o 180 stopni
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+        }
+    }
+
+    // when we hover the card, we want the side to transform
+    &:hover &__side--front{
         transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
     }
 }

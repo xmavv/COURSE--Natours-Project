@@ -3,7 +3,7 @@
     font-size: 1.5rem;
     padding: 2.5rem;
     text-align: center;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: .15);
+    @include box-shadow;
     transition: transform .3s;
     // width: calc((100% - 3 * #{$gutter-horizontal}) / 4); jak to jest to tekst gdy jest jakies mega duze slowo wyjdzie poza ten container
     width: 25%;// a gdy jest tak no to gdy jest dlugie slowo to zostanie rozszerzony ten container
