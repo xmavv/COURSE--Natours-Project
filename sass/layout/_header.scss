@@ -14,6 +14,7 @@
     /* mozemy uzyc rowniez :bottom, :center */
     /* clip-path: polygon(x y, x y, x y, x y); */
     /* ruchem wskazowek zegara */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 
     // ten ampersant zabiera nam .header i doklada do tego co zapiszemy
