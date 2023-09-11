@@ -7,3 +7,5 @@
 - inheritance
 - principles of design
 - sass
+- icon fonts
+- rowne karty przy innej dlugosci tekstu

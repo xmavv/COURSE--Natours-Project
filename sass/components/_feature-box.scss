@@ -1,0 +1,25 @@
+.feature-box {
+    background-color: rgba($color-white, $alpha: .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: .15);
+    transition: transform .3s;
+    // width: calc((100% - 3 * #{$gutter-horizontal}) / 4); jak to jest to tekst gdy jest jakies mega duze slowo wyjdzie poza ten container
+    width: 25%;// a gdy jest tak no to gdy jest dlugie slowo to zostanie rozszerzony ten container
+    border-radius: 1rem;
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        color: $color-white;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.05);
+    }
+}

@@ -5,3 +5,27 @@
     padding: 25rem 0;
     margin-top: -15vh; // 95vh - 80vh
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, .8), 
+        rgba($color-primary-dark, .8)),
+        url(../img/nat-4.jpg);
+        background-size: cover; //covers entire section
+        transform: skewY(-7deg);
+        margin-top: -12rem;
+
+        // zaznaczamy wszystko (*) co jest dzieckiem tej sekcji (&) czyli w naszym przypadku tylko "row"
+        // taki selektor & * zaznaczyłby wszystkie dzieci dzieci naszej sekcji
+        & > * {
+            transform: skewY(7deg);
+        }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 50rem;
+    margin-top: -12rem;
+}
