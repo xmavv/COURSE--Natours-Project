@@ -1,0 +1,68 @@
+.story {
+    // display: flex;
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    padding: 6rem;
+    padding-left: 9rem; // 6 + 3 z dolu ktore zabralismy po transformie
+    box-shadow: 0 3rem 6rem rgba($color-black, $alpha: .1);
+    background-color: rgba($color-white, .5);
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    & > * {
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        // min-width: 15rem;
+        width: 15rem;
+
+        // ja tu robie tak zeby ten shape-outside dzialal
+        float: left;
+
+
+        height: 15rem;
+        -webkit-shape-outside: circle(50% at 50% 50%); // musi byc float i okreslone wymiary
+        shape-outside: circle(50% at 50% 50%); //R=50% * 15REM at 50% 50% srodek kola
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+    
+    &__img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden; //zeby sie nie shakowalo przy hoverze
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}
