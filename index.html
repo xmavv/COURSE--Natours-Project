@@ -318,6 +318,34 @@
                                     <input type="email" class="form__input" placeholder="Email adress" id="email" required>
                                     <label for="email" class="form__label">Email adress</label>
                                 </div>
+
+                                <!-- w css nie mozna stylowac tych radio buttonow, wiec my stworzymy nowe, nasze -->
+                                <div class="form__group u-margin-bottom-medium">
+                                    <!-- bardziej specyficzny selektor to przejal (not(last-child)) wiec w utility, dajemy importante,
+                                    no bo my chcemy zawsze gdy jej uzyjemy zeby ona zadzialala nie -->
+                                    <div class="form__radio-group">
+                                        <input type="radio" class="form__radio-input" id="small" name="size">
+                                        <label for="small" class="form__radio-label">
+                                            <span class="form__radio-button"></span>
+                                            Small tour group
+                                        </label>
+                                    </div>
+
+                                    <div class="form__radio-group">
+                                        <!-- ukrywamy te nasze inputy, bo gdy klikniemy na label to wtedy i tak one sie
+                                        wlacza no bo sa polaczone nie -->
+                                        <input type="radio" class="form__radio-input" id="large" name="size">
+                                        <label for="large" class="form__radio-label">
+                                            <span class="form__radio-button"></span>
+                                            Large tour group
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form__group">
+                                    <button class="btn btn--green" type="submit">Next step &rarr;</button>
+                                </div>
+
                             </form>
                         </div>
                     </div>

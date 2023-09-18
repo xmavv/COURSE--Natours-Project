@@ -16,6 +16,10 @@
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
+        transition: all .3s ease;
+
+        // TUTAJ FAJNIE JAK BYS ZMIENL ZE TEN PASEK NIE TAK SIE POJAWIA
+        // TYLKO PRZECHODZI SOBIE OD LEWEJ DO PRAWEJ
 
         &:focus {
             outline: none;
@@ -56,5 +60,50 @@
         opacity: 0;
         visibility: hidden; // dzieki temu on zniknie w ogole ze strony
         transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        width: 45%;
+        display: inline-block;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            background-color: $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+    }
+
+    &__radio-input:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__radio-input {
+        display: none;
     }
 }

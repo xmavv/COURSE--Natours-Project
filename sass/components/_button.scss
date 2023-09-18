@@ -4,7 +4,9 @@
     /* link jest specjalnym stanem selektora gdy jest elementem zakotwiczajacym, wiec dziala jako lacze*/
     /* visited jak juz kliknal w przycik a potem go widzi ponownie */
     /* my chcemy zeby te dwa stany, czyli normalny link i ten po kliknieciu wygladaly tak samo */
-    &:link, &:visited {
+    &,
+    &:link,
+    &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -21,6 +23,11 @@
     // zawsze pamietaj by zadeklarowac tutaj z-index, przy uzywatniu tego aftera
     // gdy on ma byc za nim bo potem dziwne problemy sie dzieja a z tym
     z-index: 0;
+
+    //change for the def button
+
+    border: none;
+    cursor: pointer;
     }
 
     &:hover {
@@ -36,7 +43,9 @@
         }
     }
     /* active, jak klikniemy */
-    &:active {
+    &:active,
+    :focus {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .7rem 1rem rgba($color-black, .2);
     }
