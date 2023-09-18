@@ -2,8 +2,12 @@
 
     &__group {
         &:not(:last-child) {
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
         }
+
+        // to mi potrzebne do efektu ze sie width zwieksza na focusie inputu
+        height: 5rem;
+        position: relative;
     }
 
     &__input {
@@ -13,7 +17,7 @@
         padding: 1.5rem 2rem;
         background-color: rgba($color-white, $alpha: .5);
         border: none;
-        border-bottom: 3px solid transparent;
+        // border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
         transition: all .3s ease;
@@ -21,14 +25,41 @@
         // TUTAJ FAJNIE JAK BYS ZMIENL ZE TEN PASEK NIE TAK SIE POJAWIA
         // TYLKO PRZECHODZI SOBIE OD LEWEJ DO PRAWEJ
 
+        // done, tylko musialem ustawic ten input na height: 5rem bo inaczej jakis
+        // on mial dziwny height nie wiem skad wychodzil poza
+
+        &-border {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: transparent;
+            transition: all .3s ease;
+        }
+
+        //def styles
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, $alpha: .1);
-            border-bottom: 3px solid $color-primary;
+            // border-bottom: 3px solid $color-primary;
         }
 
+        //my styles
+        &:focus + &-border {
+            width: 90%;
+            background-color: $color-primary;
+        }
+
+        //def styles
         &:focus:invalid {
-            border-bottom: 3px solid $color-secondary-dark;
+            // border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        //my styles
+        &:focus:invalid + &-border{
+                width: 90%;
+                background-color: $color-secondary-dark;
         }
 
         // pseudoelementy to to co jest na stronie, a pseudoklasy raczej odnosza sie do statow
@@ -56,7 +87,7 @@
     // jakis div czy cos
     // a to tu na dole jest gdy sa od razu po sobie
     // label musi byc po inpucie zeby zostalo wybrane
-    &__input:placeholder-shown + &__label {
+    &__input:placeholder-shown ~ &__label {
         opacity: 0;
         visibility: hidden; // dzieki temu on zniknie w ogole ze strony
         transform: translateY(-4rem);
@@ -99,7 +130,7 @@
         }
     }
 
-    &__radio-input:checked + &__radio-label &__radio-button::after {
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
         opacity: 1;
     }
 
