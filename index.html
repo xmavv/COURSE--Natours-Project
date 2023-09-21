@@ -6,10 +6,33 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="css/icon-font.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="app.js" defer></script>
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
+
+        <div class="navigation">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#about" class="navigation__link"><span>01</span>About Natours</a></li>
+                    <li class="navigation__item"><a href="#features" class="navigation__link"><span>02</span>Your benefits</a></li>
+                    <li class="navigation__item"><a href="#tours" class="navigation__link"><span>03</span>Popular tours</a></li>
+                    <li class="navigation__item"><a href="#stories" class="navigation__link"><span>04</span>Stories</a></li>
+                    <li class="navigation__item"><a href="#book" class="navigation__link"><span>05</span>Book now</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
         <header class="header">
             <!-- header to nasz block w BEM, jest czyms konkretnym oddzielonym od strony (container) -->
             <!-- dajemy se diva, bo img to inline-block, ale mozemy tez w sumie zrobic display: block -->
@@ -41,7 +64,7 @@
         </header>
 
         <main>
-            <section class="section-about">
+            <section class="section-about" id="about">
                 <!-- zmieniamy ten margin-8 na margin-big, bo zapisujas 8, hardcodujemy, moglibysmy tak samo 
                 zapisac inline style, a w sposob big, mozemy zawsze sobie zmienic potem ta nasza 8 -->
                 <div class="u-center-text u-margin-bottom-big"> 
@@ -86,7 +109,7 @@
 
 
 
-            <section class="section-features">
+            <section class="section-features" id="features">
                 <div class="row">
                         <div class="feature-box">
                             <!-- dodajemy boxik bo nie chcemy nic robic z gridem ktory jest reuzywalny -->
@@ -130,7 +153,7 @@
 
 
             
-            <section class="section-tours">
+            <section class="section-tours" id="tours">
                 <div class="u-center-text u-margin-bottom-big"> 
                     <!-- utility class ==> one simple goal to center text , will be reuseable-->
                     <h2 class="heading-secondary">
@@ -240,7 +263,7 @@
 
 
 
-            <section class="section-stories">
+            <section class="section-stories" id="stories">
                 
                 <div class="bg-video">
                     <video class="bg-video__content" autoplay loop muted>
@@ -293,7 +316,7 @@
                 
             </section>
 
-            <section class="section-book">
+            <section class="section-book" id="book">
                 <div class="section-book__center">
                     <div class="book">
                         <div class="book__form">

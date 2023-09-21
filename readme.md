@@ -10,3 +10,5 @@
 - icon fonts
 - rowne karty przy innej dlugosci tekstu
 - perspective, rotation
+- radio buttons
+- checkbox hack
