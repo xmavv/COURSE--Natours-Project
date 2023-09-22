@@ -1,7 +1,3 @@
 const link = document.querySelectorAll('.navigation__link');
 
-link.forEach( e => {
-    e.addEventListener('click', () => {
-        const navToggle = document.getElementById('navi-toggle').checked = false;
-    });
-})
+link.forEach( e => e.addEventListener('click', () => navToggle = document.getElementById('navi-toggle').checked = false))
