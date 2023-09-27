@@ -1,6 +1,6 @@
 @mixin box-shadow {box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: .15);}
 @mixin center-hor-ver {
-    position: absolute;
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

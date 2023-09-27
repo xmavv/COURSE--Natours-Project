@@ -44,7 +44,7 @@
     }
     /* active, jak klikniemy */
     &:active,
-    :focus {
+    &:focus {
         outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .7rem 1rem rgba($color-black, .2);
