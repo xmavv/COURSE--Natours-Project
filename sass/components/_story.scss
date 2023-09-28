@@ -10,6 +10,11 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    // mozemy se tak zapisac w scssie
+    @media (max-width: 60rem) {
+        
+    }
+
     & > * {
         transform: skewX(12deg);
     }

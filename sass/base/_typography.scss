@@ -1,5 +1,4 @@
 body {
-    padding: 3rem;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     /* font-size: 16px; */
@@ -20,6 +19,11 @@ body {
         font-weight: 400;
         letter-spacing: 3.5rem;
         animation: moveInLeft 1s ease-in-out;
+
+        @include respond (phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     
         /* animation-delay: 3s; */
         /* ile razy sie animacja powtorzy */
@@ -32,6 +36,10 @@ body {
         font-weight: 700;
         letter-spacing: 1.75rem;
         animation: moveInRight 1s ease-in-out;
+
+        @include respond (phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -47,6 +55,12 @@ body {
     -webkit-text-fill-color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
+
+    @include respond (tab-port) {
+        font-size: 3rem;
+    } @include respond (phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skew(15deg, 2deg) scale(1.1); //110%

@@ -16,6 +16,11 @@
         box-shadow: 0 1rem 3rem rgba($color-black, $alpha: .1);
         text-align: center;
         cursor: pointer;
+
+        @include respond (tab-port) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -30,6 +35,11 @@
         // zindex dziala tylko wtedy kiedy mamy zadeklarowana pozycje
 
         transition: transform .7s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond (tab-port) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav {

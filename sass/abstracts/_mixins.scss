@@ -5,3 +5,37 @@
         left: 50%;
         transform: translate(-50%, -50%);
 }
+
+//tworzymy mixina na mediaQuery
+// 0 - 600: Phone
+// 600 - 900: Tablet portrait mode
+// 900 - 1200: Tablet landscape mode
+// 1200 - 1800: NORMAL STYLES
+// 1800+: BIG desktop
+
+// $breakpoint argument choices
+// phone
+// tab-port
+// tab-land
+// big-desktop
+
+// ORDER: base + typography > general layout + grid > page layout > components
+
+
+@mixin respond ($breakpoint) {
+        // nie robimy remami bo sie jebie
+        // uzywamy wzglednej jednostki
+        // rem and ems are not affected by root font-size
+        // wiec 1rem in media query is always that one comming from the browser
+        // czyli od usera def 16px ale moze se zmienic na 20np
+
+        // uzwamy emow bo remy sie jebia
+
+        // emy to najlepsza opcja dla media query
+
+        // 1em = 16px
+        @if $breakpoint == phone { @media (max-width: 37.5em) { @content }; }; //600px
+        @if $breakpoint == tab-port { @media (max-width: 56.25em) { @content }; }; //900px
+        @if $breakpoint == tab-land { @media (max-width: 75em) { @content }; }; //1200px
+        @if $breakpoint == big-desktop { @media (min-width: 112.5em) { @content }; }; //1800px
+}

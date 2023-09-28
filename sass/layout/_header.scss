@@ -17,6 +17,11 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 
+    @include respond (phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
     // ten ampersant zabiera nam .header i doklada do tego co zapiszemy
     &__logo-box {
         position: absolute;

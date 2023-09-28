@@ -9,6 +9,14 @@
     // perspektywe
     position: relative;
 
+    @include respond (tab-port) {
+        width: 100%;
+        max-width: 50rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0 3rem;
+    }
+
     &__side {
         height: 52rem;
         transition: all .8s ease;

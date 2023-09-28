@@ -12,6 +12,17 @@
     // zaznaczamy wszystko POZA ostatnim dzieckiem
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond (tab-port) {
+            margin-right: $gutter-vertical-small;
+        }
+    }
+
+    @include respond (tab-port) {
+        flex-direction: column;
+        width: 100% !important; // bo chce miec pewnosc ze to na dole nie zostaje zastosowane
+        gap: $gutter-vertical-small;
+        align-items: center;
     }
 
     // zaznaczamy wszystkie elementy ktore maja atrubyt class ktory zaczyna sie na col-

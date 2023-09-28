@@ -10,12 +10,35 @@
 
 html {
     // this defines what 1 rem is
-    font-size: 62.5%;
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
     /* w ten sposob wszystko gitarka */
     /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */
+
+    //nie uzywamy bo chcemy taki sam jak dla tab-port
+
+    // @include respond (phone) {
+    //     font-size: 50%; //1rem = 
+    // }
+
+    @include respond (big-desktop) {
+        font-size: 75%; //1rem = 12px, 12/16 = 75%
+    }
+
+    @include respond (tab-land) {
+        font-size: 56.25%; //1rem = 9px , 9/16 = 56.25%
+    }
+
+    @include respond (tab-port) {
+        font-size: 50%; //1rem = 8px , 8/16 = 50%
+    }
 }
 
 body {
     box-sizing: border-box;
     /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }

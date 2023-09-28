@@ -43,13 +43,25 @@ html {
   font-size: 62.5%;
   /* w ten sposob wszystko gitarka */
   /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
-  /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */ }
+  /* to nam pomaga w tym, ze nie dodajemy szerokosci i wysokosci do naszego elementu */
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
-  padding: 3rem;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
@@ -71,12 +83,19 @@ body {
     /* animation-delay: 3s; */
     /* ile razy sie animacja powtorzy */
     /* animation-iteration-count: 3; */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-in-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -90,6 +109,12 @@ body {
   -webkit-text-fill-color: transparent;
   letter-spacing: .2rem;
   transition: all .2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skew(15deg, 2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -244,6 +269,11 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform .3s;
   width: 25%; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      width: 100%;
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: .5rem;
@@ -262,6 +292,13 @@ body {
   perspective: 1500px;
   -moz-perspective: 150rem;
   position: relative; }
+  @media (max-width: 56.25em) {
+    .card {
+      width: 100%;
+      max-width: 50rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0 3rem; } }
   .card__side {
     height: 52rem;
     transition: all .8s ease;
@@ -569,6 +606,15 @@ body {
   gap: 6rem; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-right: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      flex-direction: column;
+      width: 100% !important;
+      gap: 6rem;
+      align-items: center; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -596,6 +642,10 @@ body {
   /* ruchem wskazowek zegara */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -617,6 +667,9 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -627,6 +680,10 @@ body {
     border-top: 1px solid #777;
     padding-top: 2rem;
     width: 150%; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -649,6 +706,10 @@ body {
     padding-top: 2rem;
     width: 60%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 80%;
+        float: none; } }
 
 .navigation__checkbox {
   display: none; }
@@ -665,6 +726,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -676,6 +741,10 @@ body {
   right: 6.5rem;
   z-index: 1000;
   transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   height: 100vh;
