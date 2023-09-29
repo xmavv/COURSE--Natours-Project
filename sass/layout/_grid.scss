@@ -23,6 +23,7 @@
         width: 100% !important; // bo chce miec pewnosc ze to na dole nie zostaje zastosowane
         gap: $gutter-vertical-small;
         align-items: center;
+        padding: 0 3rem;
     }
 
     // zaznaczamy wszystkie elementy ktore maja atrubyt class ktory zaczyna sie na col-

@@ -28,6 +28,10 @@
         // done, tylko musialem ustawic ten input na height: 5rem bo inaczej jakis
         // on mial dziwny height nie wiem skad wychodzil poza
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
         &-border {
             bottom: 0;
             left: 0;
@@ -49,6 +53,10 @@
         &:focus + &-border {
             width: 90%;
             background-color: $color-primary;
+
+            @include respond (tab-port) {
+                width: 100%;
+            }
         }
 
         //def styles
@@ -60,6 +68,10 @@
         &:focus:invalid + &-border{
                 width: 90%;
                 background-color: $color-secondary-dark;
+
+                @include respond (tab-port) {
+                    width: 100%;
+                }
         }
 
         // pseudoelementy to to co jest na stronie, a pseudoklasy raczej odnosza sie do statow
@@ -96,6 +108,11 @@
     &__radio-group {
         width: 45%;
         display: inline-block;
+
+        @include respond (tab-port) {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
     }
 
     &__radio-label {
