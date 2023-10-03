@@ -380,7 +380,25 @@
 
         <footer class="footer">
             <div class="footer__logo-box">
-                <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+
+
+                <picture class="footer__logo">
+                    <!-- jak jest mniejsza niz 600px to wtedy ten srcset w sourcie bedzie -->
+                    
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+
+                    <!-- stawiamy srcset na high i low res screens -->
+                    <!-- jezeli szerokosc jest wieksza niz 600px to wtedy ten srcset z naszego tagu img zostanie
+                    zastosowany -->
+
+                    <!-- to w srcset to jest density switch -->
+                    <!-- a to co jest w tym calym naszym picture i source to jest art direction, diff img for diff vw-->
+                    
+                    <img srcset="img/logo-green-1x.png 1x,  img/logo-green-2x.png 2x" alt="Full logo">
+                </picture>
+
+
             </div>
 
             <div class="row">

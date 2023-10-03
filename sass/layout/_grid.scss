@@ -23,7 +23,7 @@
         width: 100% !important; // bo chce miec pewnosc ze to na dole nie zostaje zastosowane
         gap: $gutter-vertical-small;
         align-items: center;
-        padding: 0 3rem;
+        padding: 0;
     }
 
     // zaznaczamy wszystkie elementy ktore maja atrubyt class ktory zaczyna sie na col-
@@ -40,6 +40,10 @@
         // mozna mieszac jednostki
         //w sassie w calc musimy dodac ten hash i curly braces
         width: calc((100% - #{$gutter-horizontal}) / 2);
+
+        @include respond (tab-port) {
+            width: 80%;
+        }
     }
 
     .col-1-of-3 {

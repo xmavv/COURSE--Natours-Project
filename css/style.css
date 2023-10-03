@@ -744,9 +744,12 @@ body {
       width: 100% !important;
       gap: 6rem;
       align-items: center;
-      padding: 0 3rem; } }
+      padding: 0; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
+    @media (max-width: 56.25em) {
+      .row .col-1-of-2 {
+        width: 80%; } }
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-1-of-4 {
@@ -984,7 +987,10 @@ body {
     transform: skewY(7deg); }
   @media (max-width: 56.25em) {
     .section-features {
-      padding: 15rem 0; } }
+      padding: 15rem 0rem; } }
+  @media (max-width: 75em) {
+    .section-features {
+      padding: 15rem 1rem; } }
 
 .section-tours {
   background-color: #f7f7f7;
