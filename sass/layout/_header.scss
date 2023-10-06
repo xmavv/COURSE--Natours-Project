@@ -5,7 +5,7 @@
         to right bottom, 
         rgba($color-primary-light, .8), 
         rgba($color-primary-dark, .8)),
-        url(../img/hero.jpg);
+        url(../img/hero-small.jpg);
     background-size: cover;
     /* cover zawsze bedzie sie staral dopasowac maksymalnie do containera naszego */
     background-position: top;
@@ -16,6 +16,20 @@
     /* ruchem wskazowek zegara */
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+    @media (min-resolution: 192dpi) and (min-width: 47.5em),
+    (min-width: 125em) { 
+        // przecinek traktujemy jako or
+
+        // high res retina apple screen 192dpi          dots per inch
+        // dodajemy drugi warunek, bo gdy mamy telefon i on ma 2x screen to i tak wystarczy nam 1200px a wiec bg-small
+
+        background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-secondary-light, .8), 
+        rgba($color-primary-dark, .8)),
+        url(../img/hero.jpg);
+    }
 
     @include respond (phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);

@@ -97,9 +97,42 @@
                     </div>
                     <div class="col-1-of-2">
                         <div class="composition">
-                            <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+
+                            <!-- html wie o szerokosc ekranu vw oraz pixel density za kazdym razem jak sie wlacza strona i renderuje sie
+                            dokument html -->
+
+                            <!-- mowimy przegladarce ile maja szerokosci, zeby przegladarka nie musiala ich pobierac
+                            tylko zeby wiedziala to od nas -->
+
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                                sizes="(max-width: 56.25em) 27vw, (max-width: 37.5em) 33vw, 312px"
+                                alt="Photo1"
+                                class="composition__photo composition__photo--p1"
+                                src="img/nat-1-large.jpg">
+
+
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                                sizes="(max-width: 56.25em) 27vw, (max-width: 37.5em) 33vw, 312px"
+                                alt="Photo2"
+                                class="composition__photo composition__photo--p2"
+                                src="img/nat-2-large.jpg">
+
+
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                                sizes="(max-width: 56.25em) 27vw, (max-width: 37.5em) 33vw, 312px"
+                                alt="Photo3"
+                                class="composition__photo composition__photo--p3"
+                                src="img/nat-3-large.jpg">
+                                <!-- dajemy src i tak bo starsza przegladarka moze nie rozumiec srcset -->
+
+                                <!-- ostatnie po przecinku to wartosc default -->
+                                
+                                <!-- ustawiamy breakpointy i sprawdzamy ile w naszym przypadku wynosi
+                                ten konkretny img i w pisujemy podzielone przez ta szerokosc zadeklarowana w media query -->
+
+                            <!-- <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
                             <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                            <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                            <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3"> -->
                         </div>
                     </div>
                 </div>
@@ -395,7 +428,7 @@
                     <!-- to w srcset to jest density switch -->
                     <!-- a to co jest w tym calym naszym picture i source to jest art direction, diff img for diff vw-->
                     
-                    <img srcset="img/logo-green-1x.png 1x,  img/logo-green-2x.png 2x" alt="Full logo">
+                    <img srcset="img/logo-green-1x.png 1x,  img/logo-green-2x.png 2x" alt="Full logo" src="img/logo-green-2x.png">
                 </picture>
 
 

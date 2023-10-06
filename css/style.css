@@ -743,8 +743,10 @@ body {
       flex-direction: column;
       width: 100% !important;
       gap: 6rem;
-      align-items: center;
-      padding: 0; } }
+      align-items: center; } }
+  @media (max-width: 75em) {
+    .row {
+      padding: 0 2rem; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
     @media (max-width: 56.25em) {
@@ -764,7 +766,7 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   /* cover zawsze bedzie sie staral dopasowac maksymalnie do containera naszego */
   background-position: top;
@@ -775,6 +777,9 @@ body {
   /* ruchem wskazowek zegara */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 47.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
