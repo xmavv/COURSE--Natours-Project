@@ -24,6 +24,7 @@
         left: 0;
         width: 100%;
         // nie zobaczymy tylnej czesci
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         @include box-shadow;
 

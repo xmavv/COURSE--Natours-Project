@@ -10,6 +10,12 @@
     visibility: hidden;
     transition: all .3s ease;
 
+    @supports (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem)) { //what we want if this property is supported
+        -webkit-backdrop-filter: blur(1rem); //bierze wszystko co jest tlem, co jest za naszym obrazem
+        backdrop-filter: blur(1rem);
+        background: rgba($color-black, $alpha: .5);
+    }
+
     &__content {
         @include center-hor-ver;
         position: relative;
