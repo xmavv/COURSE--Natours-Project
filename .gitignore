@@ -1,3 +1,5 @@
 # ignore video
 video.mp4
 video.webm
+
+node_modules
