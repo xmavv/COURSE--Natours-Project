@@ -34,9 +34,11 @@
         // emy to najlepsza opcja dla media query
 
         // 1em = 16px
-        @if $breakpoint == phone { @media (max-width: 37.5em) { @content }; }; //600px
-        @if $breakpoint == tab-port { @media (max-width: 56.25em) { @content }; }; //900px
-        @if $breakpoint == tab-land { @media (max-width: 75em) { @content }; }; //1200px
-        @if $breakpoint == popup { @media (max-width: 87.5em) { @content }; }; //1400px in case for popup
-        @if $breakpoint == big-desktop { @media (min-width: 112.5em) { @content }; }; //1800px
+        @if $breakpoint == phone { @media only screen and (max-width: 37.5em) { @content }; }; //600px
+        @if $breakpoint == tab-port { @media only screen and (max-width: 56.25em) { @content }; }; //900px
+        @if $breakpoint == tab-land { @media only screen and (max-width: 75em) { @content }; }; //1200px
+        @if $breakpoint == popup { @media only screen and (max-width: 87.5em) { @content }; }; //1400px in case for popup
+        @if $breakpoint == big-desktop { @media only screen and (min-width: 112.5em) { @content }; }; //1800px
+        // dodajemy only screen zeby bylo tylko na screenach
+        // jak ktos bedzie chcial wydrukowac nasza strone to sie nie zastosuje to
 }

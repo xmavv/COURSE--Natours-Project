@@ -8,3 +8,5 @@ popup.addEventListener('click', () => { popup.classlist.add('show') });
 document.addEventListener('click', e => {
     
 })
+
+// jeszcze w popupie wyjscie

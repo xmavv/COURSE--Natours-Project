@@ -17,8 +17,8 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 
-    @supports (-webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)) or 
-    (clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)) {
+    @supports   (-webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)) or 
+                (clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)) {
         //ustawiamy dla przegladarek ktore nie obsluguja clippathu
 
         height: 95vh;
@@ -26,9 +26,9 @@
         clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     }
 
-    @media  (min-resolution: 192dpi) and (min-width: 47.5em),
-            (-webkit-min-device-pixel-ratio: 2) and (min-width: 47.5em), //webkit for safari
-            (min-width: 125em) { 
+    @media  only screen and (min-resolution: 192dpi) and (min-width: 47.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 47.5em), //webkit for safari
+            only screen and (min-width: 125em) { 
         // przecinek traktujemy jako or
 
         // high res retina apple screen 192dpi          dots per inch
