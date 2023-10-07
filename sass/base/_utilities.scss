@@ -19,3 +19,6 @@
 
 .u-margin-top-big {margin-top: 8rem !important;}
 .u-margin-top-huge {margin-top: 10rem !important;}
+
+.u-display-none-popup { opacity: 0 !important; visibility: hidden !important; }
+.u-display-none-popup-content { opacity: 0 !important; transform: translate(-50%, -50%) scale(0) !important; }

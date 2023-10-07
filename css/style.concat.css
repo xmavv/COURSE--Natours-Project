@@ -488,7 +488,8 @@
 html {
   font-size: 62.5%;
   /* w ten sposob wszystko gitarka */
-  /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */ }
+  /* fs: 10px --> w ten sposob nie mozna zmienic sobie w przegladarce */
+  scroll-behavior: smooth; }
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -605,6 +606,14 @@ body {
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
+
+.u-display-none-popup {
+  opacity: 0 !important;
+  visibility: hidden !important; }
+
+.u-display-none-popup-content {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0) !important; }
 
 .btn {
   /* pseudoklasa linku kiedy np hoverujemy albo checkbox is clicked, albo lastchild */
@@ -1079,8 +1088,8 @@ body {
   top: 0;
   left: 0;
   z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   transition: all .3s ease; }
   @supports (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem)) {
     .popup {
@@ -1097,8 +1106,8 @@ body {
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     display: table;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
     transition: all .4s ease .2s; }
     @media only screen and (max-width: 87.5em) {
       .popup__content {
