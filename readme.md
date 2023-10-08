@@ -16,7 +16,7 @@ This is the first website of [css course](https://www.udemy.com/courseadvanced-c
 
 ### Video
 
-
+https://github.com/xmavv/WEATHER_APP/assets/129995423/17802957-8d91-4a2a-8280-70f0c3ae3e14
 
 ### Deploying project
 
